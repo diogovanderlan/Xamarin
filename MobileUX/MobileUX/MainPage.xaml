@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage Padding="20" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MobileUX" x:Class="MobileUX.MainPage">
+    <ScrollView>       
+    <StackLayout VerticalOptions="Center">
+        <Image Source="logo.jpg" ></Image>
+        <Entry Text="{Binding Email}" Placeholder="e-mail" IsSpellCheckEnabled="false" Keyboard="Email" ></Entry>
+        <Entry Text="{Binding Senha}" Placeholder="senha" IsPassword="true" Keyboard="Numeric"></Entry>       
+        
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="End">                
+
+                <Button Text="CANCELAR" StyleClass="Warning"></Button>
+                
+                <Button Text="ENTRAR" StyleClass="Success" Command="{Binding EntrarCommand}"></Button>
+                
+            </StackLayout>
+    </StackLayout>
+        </ScrollView>
+</ContentPage>

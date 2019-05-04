@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MobileUX.Anuncios">
+    <StackLayout>
+        <SearchBar x:Name="busca"  SearchButtonPressed="Handle_SearchButtonPressed" Placeholder="Busca" ></SearchBar>
+        <ListView RowHeight="80" HasUnevenRows="false" x:Name="MyListView" ItemsSource="{Binding Items}" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+                    <!--
+            <ImageCell ImageSource="{Binding Src}" 
+                       Text="{Binding Titulo}" 
+                       Detail="{Binding Valor}">
+                        
+            </ImageCell>
+                    -->
+            <ViewCell>
+            <Grid Padding="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="8*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                            
+                <Image Grid.Column="0" StyleClass="Circle" Source="{Binding Src}"></Image>
+                <StackLayout Grid.Column="1">
+                    <Label FontSize="Large" FontAttributes="Bold" Text="{Binding Titulo}" LineBreakMode="TailTruncation"></Label>
+                    <Label FontAttributes="Bold" TextColor="Red" Text="{Binding Valor}"></Label>
+                </StackLayout>                        
+            </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
